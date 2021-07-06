@@ -9,6 +9,10 @@ socketAdmin.on('welcome', (msg) => {
   console.log(msg);
 });
 
+socket.on('joined', (msg) => {
+  console.log(msg);
+});
+
 document.querySelector('#message-form').addEventListener('submit', (event) => {
   event.preventDefault();
   const newMessage = document.querySelector('#user-message').value;

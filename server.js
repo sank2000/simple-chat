@@ -18,6 +18,11 @@ io.on('connection', (socket) => {
     console.log(msg);
     io.emit('messageToClients', { text: msg.text });
   });
+
+  socket.join('level1');
+  socket
+    .to('level1')
+    .emit('joined', `${socket.id} says I have joined the level 1 room`);
 });
 
 io.of('/admin').on('connection', (socket) => {
